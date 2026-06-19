@@ -20,9 +20,11 @@ A simple project demonstrating bidirectional asynchronous communication between 
 - Java JDK 17+
 
 ## How to Run
-
-1. Start your RabbitMQ server.
-2. Run the Python Waiter application:
-   python WaiterApp.py
-3. Run the Kotlin Kitchen application. 
-   Note: You can run multiple instances of the Kotlin app in parallel to test RabbitMQ's load balancing.
+- Deschide rabbit pe localhost:5672
+- creeaza exchange restaurant.direct
+- creeaza coada order.queue
+- creeaza coada prepared.queue
+- adauga binding in exchange: order.queue cu routing key to.kitchen
+- adauga binding in exchange: prepared.queue cu routing key to.serve
+- Deschide in IntelliJ Cook-Kotlin - pornesti din Kitchen.kt pe verde fun main 
+- Deschide in PyCharm Waiter-Python - pornesti din main
